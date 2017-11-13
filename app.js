@@ -13,13 +13,26 @@ function onReady() {
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
 
+    let removeItemButton = document.createElement('input');
+    removeItemButton.type = "button";
+    removeItemButton.value = "Remove";
+    removeItemButton.id = "removeButton";
+
     newLi.textContent = title;
 
     newLi.appendChild(checkbox);
 
+    newLi.appendChild(removeItemButton);
+
     toDoList.appendChild(newLi);
 
+    toDoList.appendChild(newDelButton);
+
     newToDoText.value = '';
+
+    removeItemButton.addEventListener("click", function(e) {
+      newLi.removeChild(newLi);
+    });
   });
 }
 
