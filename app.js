@@ -1,4 +1,5 @@
 function onReady() {
+
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
@@ -26,17 +27,14 @@ function onReady() {
 
     toDoList.appendChild(newLi);
 
-    toDoList.appendChild(newDelButton);
-
     newToDoText.value = '';
 
-    removeItemButton.addEventListener("click", function(e) {
-      newLi.removeChild(newLi);
+    removeItemButton.addEventListener('click', event => {
+      newLi.parentNode.removeChild(newLi);
     });
   });
 }
 
 window.onload = function() {
-  alert("The window has loaded!");
   onReady();
 };
